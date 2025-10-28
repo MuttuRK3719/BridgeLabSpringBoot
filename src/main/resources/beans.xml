@@ -4,9 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="engine" class="com.example.constructorinjection.Engine" />
-
-    <bean id="car" class="com.example.constructorinjection.Car">
-        <constructor-arg ref="engine" />
+    <bean id="engine" class="com.example.setterinjection.Engine" />
+    <bean id="car" class="com.example.setterinjection.Car">
+        <property name="model" value="Tesla" />
+        <property name="engine" ref="engine" />
     </bean>
 </beans>
