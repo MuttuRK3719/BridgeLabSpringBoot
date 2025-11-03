@@ -1,8 +1,12 @@
-package com.example.employeemanagement;
+package com.example.employeemanagement.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
+import java.util.Set;
+
 @Setter
 @Getter
 @Entity
@@ -14,9 +18,14 @@ public class Project {
             allocationSize = 1
     )
     @Id
-    private int id;
+    private Long id;
+
     @Column(name = "project_name",nullable = false,unique = true)
     private String name;
+
     @Column(nullable = false)
     private double budget;
+
+    @ManyToMany(mappedBy = "projects")
+    private Set<Employee> employees;
 }

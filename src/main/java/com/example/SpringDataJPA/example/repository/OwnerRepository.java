@@ -1,0 +1,18 @@
+package com.example.SpringDataJPA.example.repository;
+
+import com.example.SpringDataJPA.example.entity.Owner;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface OwnerRepository {
+    void save(Owner owner);
+
+    Optional<Owner> findById(int ownerId);
+
+    void updatePetDetails(int ownerId, String petName);
+
+    void deleteById(int ownerId);
+
+    List<Owner> findAll();
+}
